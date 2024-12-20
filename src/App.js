@@ -6,7 +6,7 @@ function App() {
 
 const [weatherData, setWeatherData] = useState("");
 const [city, setLocation] = useState("Ghana"); // default city
-const apiKey = '6eaafdaab64040f1d3d0f29bb420566e'; // replace with your OpenWeatherMap API key
+const apiKey = '6eaafdaab64040f1d3d0f29bb420566e'; // replace with your OpenWeatherMap API 
 
 useEffect(() => {
   const fetchWeather = async () => {
@@ -104,4 +104,4 @@ useEffect(() => {
   );
 }
 
-export default App;
+export default App
