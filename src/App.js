@@ -53,20 +53,20 @@ const bgstyle ={
           </div>
 
           <div className= "temp">
-           {weatherData.main ? <h1>{weatherData.main.temp.toFixed()}°C</h1> : null}
+           {weatherData.main ? <h1>{weatherData.main.temp.toFixed()}°C</h1> : null}s
           </div>
 
-          <div className= "relative top-[-10px] description flex">
-            {weatherData.weather ? <p className= 'relative left-[16rem] bold'>{weatherData.weather[0].main}</p> : null}
+          <div className= "relative op-[-10px] description fle">
+            {/* {weatherData.weather ? <p className= 'relative left-[16rem] bold'>{weatherData.weather[0].main}</p> : null} */}
             {weatherData.weather && weatherData.weather.map((condition) => (
-              <div key={condition.id} className=' ml-[15rem]'>
+              <div key={condition.id} className=' ml-[18rem] mb-20'>
                 <img
                   src={`http://openweathermap.org/img/wn/${condition.icon}@2x.png`}
                   alt={condition.description}
-                  className='relative top-[-2rem]'
+                  className='relative left-[4rem]'
                 />
                 {/* <p>Main: {condition.main}</p> */}
-                <p className='mt-[-4rem] relative right-14 font-semibold'>Description: {condition.description}</p>
+                <p className='mt-[-4rem top-[-4.5rem] relative right-14 font-semibold'>{condition.description}</p>
               </div>
             ))}
             
