@@ -32,11 +32,10 @@ const bgstyle ={
 };
 
 
-
   return (
     
     <div className='flex justify-center w-full '>
-    <div className="h-dvh max-w-max flex flex-col items-center overflow-x-hidden app"  style={bgstyle}>
+    <div className="h-dvh max-w-ma flex flex-col items-center overflow-x-hidden app"  style={bgstyle}>
       <div className= 'flex justif-center   earch'>
         <input
         value={city}
@@ -57,8 +56,20 @@ const bgstyle ={
            {weatherData.main ? <h1>{weatherData.main.temp.toFixed()}°C</h1> : null}
           </div>
 
-          <div className= "relative top-[-40px] description">
-            {weatherData.weather ? <p className= 'bold'>{weatherData.weather[0].main}</p> : null}
+          <div className= "relative top-[-10px] description flex">
+            {weatherData.weather ? <p className= 'relative left-[16rem] bold'>{weatherData.weather[0].main}</p> : null}
+            {weatherData.weather && weatherData.weather.map((condition) => (
+              <div key={condition.id} className=' ml-[15rem]'>
+                <img
+                  src={`http://openweathermap.org/img/wn/${condition.icon}@2x.png`}
+                  alt={condition.description}
+                  className='relative top-[-2rem]'
+                />
+                {/* <p>Main: {condition.main}</p> */}
+                <p className='mt-[-4rem] relative right-14 font-semibold'>Description: {condition.description}</p>
+              </div>
+            ))}
+            
           </div> 
         </div>
 
